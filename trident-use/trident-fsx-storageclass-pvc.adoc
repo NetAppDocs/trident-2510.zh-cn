@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: trident-use/trident-fsx-storageclass-pvc.html 
+keywords: Amazon FSx for NetApp ONTAP, FSx for ONTAP, deploy Trident, integrate Trident, Trident 
+summary: '使用 Trident 和 Amazon FSx for NetApp ONTAP，您可以确保在 Amazon Elastic Kubernetes Service (EKS) 中运行的 Kubernetes 集群可以配置由 ONTAP 支持的块和文件持久卷。' 
+---
+= 配置存储类和 PVC
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配置 Kubernetes StorageClass 对象并创建存储类，以指导 Trident 如何配置卷。创建一个 PersistentVolumeClaim (PVC)，该 PVC 使用配置的 Kubernetes StorageClass 来请求对 PV 的访问。然后，您可以将 PV 挂载到 pod 上。
+
+
+
+== 创建存储类
+
+
+
+=== 配置 Kubernetes StorageClass 对象
+
+ https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass 对象"^] 对象将 Trident 标识为用于该类的配置程序，并指示 Trident 如何预配卷。使用此示例为使用 NFS 的卷设置 Storageclass（有关属性的完整列表，请参阅下面的 Trident 属性部分）：
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+使用以下示例为使用 iSCSI 的卷设置 Storageclass：
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-san"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+要在 AWS Bottlerocket 上配置 NFSv3 卷，请将所需的 `mountOptions`添加到存储类：
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  media: "ssd"
+  provisioningType: "thin"
+  snapshots: "true"
+mountOptions:
+  - nfsvers=3
+  - nolock
+----
+请参阅link:../trident-reference/objects.html["Kubernetes 和 Trident 对象"]，了解存储类如何与 `PersistentVolumeClaim`交互，以及用于控制 Trident 配置卷的参数详情。
+
+
+
+=== 创建存储类
+
+.步骤
+. 这是一个 Kubernetes 对象，因此请使用  `kubectl` 在 Kubernetes 中创建它。
++
+[source, console]
+----
+kubectl create -f storage-class-ontapnas.yaml
+----
+. 现在，您应该在 Kubernetes 和 Trident 中都看到 *basic-csi* 存储类，并且 Trident 应该已经发现了后端的池。
++
+[source, console]
+----
+kubectl get sc basic-csi
+----
+
+
+[listing]
+----
+NAME         PROVISIONER             AGE
+basic-csi    csi.trident.netapp.io   15h
+
+----
+
+
+== 创建 PVC
+
+ https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^]（PVC）是访问集群上 PersistentVolume 的请求。
+
+PVC 可以配置为请求特定大小或访问模式的存储。使用关联的 StorageClass，集群管理员可以控制超出 PersistentVolume 大小和访问模式的更多内容——例如性能或服务级别。
+
+创建 PVC 后，您可以将卷安装在 Pod 中。
+
+
+
+=== 示例清单
+
+.PersistentVolumeClaim 示例清单
+[%collapsible]
+====
+这些示例显示了基本的 PVC 配置选项。
+
+.带 RWX 访问的 PVC
+此示例显示了一个与名为 `basic-csi`的 StorageClass 相关联的具有 RWX 访问权限的基本 PVC。
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-storage
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ontap-gold
+----
+.PVC 使用 iSCSI 示例
+此示例显示了一个与名为 `protection-gold`的 StorageClass 相关联的具有 RWO 访问权限的 iSCSI 基本 PVC。
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: pvc-san
+spec:
+accessModes:
+  - ReadWriteOnce
+resources:
+  requests:
+    storage: 1Gi
+storageClassName: protection-gold
+----
+====
+
+
+=== 创建 PVC
+
+.步骤
+. 创建 PVC。
++
+[source, console]
+----
+kubectl create -f pvc.yaml
+----
+. 验证 PVC 状态。
++
+[source, console]
+----
+kubectl get pvc
+----
+
+
+[listing]
+----
+NAME        STATUS VOLUME     CAPACITY ACCESS MODES STORAGECLASS AGE
+pvc-storage Bound  pv-name 2Gi      RWO                       5m
+----
+请参阅link:../trident-reference/objects.html["Kubernetes 和 Trident 对象"]，了解存储类如何与 `PersistentVolumeClaim`交互，以及用于控制 Trident 配置卷的参数详情。
+
+
+
+== Trident 属性
+
+这些参数确定应使用哪些 Trident 管理的存储池来配置给定类型的卷。
+
+[cols=",,,,,"]
+|===
+| 属性 | 类型 | 值 | 提供 | 请求 | 支持方 
+
+
+| 媒体^1^ | string | hdd、hybrid、ssd | 池包含此类型的介质；混合意味着两者兼有 | 指定媒体类型 | ontap-nas，ontap-nas-economy，ontap-nas-flexgroup，ontap-san，solidfire-san 
+
+
+| provisioningType | string | 薄、厚 | 池支持此配置方法 | 已指定配置方法 | thick：所有 ONTAP；thin：所有 ONTAP 和 solidfire-san 
+
+
+| backendType | string  a| 
+ontap-nas，ontap-nas-economy，ontap-nas-flexgroup，ontap-san，solidfire-san，azure-netapp-files，ontap-san-economy
+| 池属于此类型的后端 | 指定后端 | 所有驱动程序 
+
+
+| snapshots | 布尔值 | true，false | 池支持具有快照的卷 | 已启用快照的卷 | ontap-nas、ontap-san、solidfire-san 
+
+
+| 个克隆 | 布尔值 | true，false | 池支持克隆卷 | 已启用克隆的卷 | ontap-nas、ontap-san、solidfire-san 
+
+
+| 加密 | 布尔值 | true，false | 池支持加密卷 | 已启用加密的卷 | ontap-nas，ontap-nas-economy，ontap-nas-flexgroups，ontap-san 
+
+
+| IOPS | int | 正整数 | 池能够保证此范围内的 IOPS | 卷保证这些 IOPS | solidfire-san 
+|===
+^1^：ONTAP Select 系统不支持
