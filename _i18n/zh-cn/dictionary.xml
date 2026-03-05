@@ -6085,5 +6085,5 @@
   <block id="e8ce47501426b8525633fc30daf17d7a" category="sidebar">自定义卷名</block>
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">跨命名空间共享 NFS 卷</block>
   <block id="62486fa65fc31c383ace8989549632ad" category="sidebar">使用快照</block>
-  <block id="f45ace2e96672a5ca55ea6bac48b9865" category="admonition">##如果您的应用程序使用多个命名空间，并且这些命名空间具有同名的 PVC，则快照还原操作（就地和新命名空间）将无法正常工作。所有还原的卷将具有相同的数据，而不是每个命名空间的正确数据。使用备份还原而不是快照还原，或升级到修复此问题的 26.02 版或更高版本。##</block>
+  <block id="13ad5ea7a7de5c042f384062c89a068e" category="admonition">如果您的应用程序使用多个命名空间，并且这些命名空间具有同名的 PVC，则快照还原操作（就地和新命名空间）将无法正常工作。所有还原的卷将具有相同的数据，而不是每个命名空间的正确数据。使用备份还原而不是快照还原，或升级到修复此问题的 26.02 版或更高版本。</block>
 </blocks>
