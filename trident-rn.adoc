@@ -888,7 +888,7 @@ IMPORTANT: Trident 现在支持 Kubernetes 1.27。请在升级 Kubernetes 之前
 
 == 22.04 的变化
 
-NetApp 不断改进和增强其产品和服务。以下是 Trident 中的一些最新功能。有关以前的版本，请参阅 https://docs.netapp.com/us-en/trident/earlier-versions.html["早期版本的文档"]。
+NetApp 不断改进和增强其产品和服务。以下是 Trident 中的一些最新功能。有关早期版本，请参阅早期版本的文档。
 
 
 IMPORTANT: 如果要从任何先前的 Trident 版本升级并使用 Azure NetApp Files，则 ``location`` 配置参数现在是必需的单例字段。

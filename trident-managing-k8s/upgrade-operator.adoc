@@ -21,7 +21,7 @@ summary: 您可以使用操作员轻松升级现有 Trident 安装。
 您可以从集群范围内的 Trident 操作员安装升级到另一个集群范围内的 Trident 操作员安装。所有 Trident 版本都使用集群范围的操作符。
 
 
-NOTE: 要从使用命名空间范围运算符（版本 20.07 至 20.10）安装的 Trident 进行升级，请使用 link:../earlier-versions.html["您安装的版本"] 版本的 Trident 升级说明。
+NOTE: 要从使用命名空间作用域运算符（版本 20.07 至 20.10）安装的 Trident 进行升级，请使用已安装 Trident 版本的升级说明。
 
 .关于此任务
 Trident 提供了一个捆绑文件，可用于安装操作员并为您的 Kubernetes 版本创建关联的对象。
