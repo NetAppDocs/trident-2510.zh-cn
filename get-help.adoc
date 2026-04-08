@@ -82,6 +82,9 @@ link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
 | -- | -- | 2026年1月 
 |===
 
+NOTE: 有关最新 Trident 版本支持计划，请参阅 https://docs.netapp.com/us-en/trident/get-help.html#trident-support-lifecycle["支持生命周期页面"]。
+
+
 
 == 自助支持
 

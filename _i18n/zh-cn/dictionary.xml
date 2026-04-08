@@ -2323,13 +2323,8 @@
   <block id="2358fb4006fff416413cb9bfc04e4b73" category="list-text">确保 AWS 会话令牌过期时间足以进行任何长期运行的还原操作。如果令牌在还原操作期间过期，则操作可能会失败。</block>
   <block id="df710f89ebb9e663bd3d66607a0bf413" category="inline-link">AWS 文档</block>
   <block id="f3aa7db516c38030a276a5895520407a" category="list-text">有关 AWS 资源凭据的详细信息，请参见<block ref="968595e57d50a64e3fbe0f06bc16cb91" category="inline-link-rx"></block>。</block>
-  <block id="cfb3749b52f4ce0c21dcdc3a9fce80f2" category="list-text">使用 Trident Protect CLI 插件检查目标集群上 AppVault CR 的可用性：</block>
-  <block id="1ff83a5266e9e025c2984e0c10dea90e" category="admonition">确保目标集群上存在用于应用程序还原的命名空间。</block>
-  <block id="8d433ae9a21c49e9e5433ebd408605c0" category="list-text">从目标集群查看可用的 AppVault 的备份内容：</block>
   <block id="378e6f0ba7080535a4462b5311befb40" category="paragraph">运行此命令会显示 AppVault 中的可用备份，包括其原始群集、相应的应用程序名称、时间戳和存档路径。</block>
   <block id="52b5830420efb96c3a91beb52bac3b23" category="paragraph">*输出示例：*</block>
-  <block id="053aba80de03f3fdf626d1c858342330" category="list-text">使用 AppVault 名称和存档路径将应用程序还原到目标集群：</block>
-  <block id="fceebbe32c1f7b24c54d6a4e8a0fa776" category="admonition">如果 BackupRestore CR 不可用，您可以使用步骤 2 中提到的命令查看备份内容。</block>
   <block id="4ef55c1fec2de9218af40d16cbc021a4" category="list-text">使用以下命令还原应用程序，用环境中的信息替换括号中的值。namespace-mapping 参数使用冒号分隔的命名空间将源命名空间映射到格式为 source1:dest1,source2:dest2 的正确目标命名空间。例如：</block>
   <block id="db4c6bfd26488f4d6ab2ec6129b067d8" category="section-title">从快照还原到其他命名空间</block>
   <block id="00a11b317e9c8f9d94e106859445f95b" category="paragraph">您可以使用自定义资源 (CR) 文件将数据从快照还原到其他命名空间或原始源命名空间。使用 SnapshotRestore CR 将快照还原到其他命名空间时，Trident Protect 会在新命名空间中还原应用程序，并为还原的应用程序创建应用程序 CR。要保护还原的应用程序，请创建按需备份或快照，或建立保护计划。</block>
@@ -6062,4 +6057,12 @@
   <block id="6cb6457c77d43e645e6ad531fd87c3e7" category="admonition">要从使用命名空间作用域运算符（版本 20.07 至 20.10）安装的 Trident 进行升级，请使用已安装 Trident 版本的升级说明。</block>
   <block id="c6e5aff4c5e70680da18857e52172127" category="list-text">如果您要从四版本窗口之外的版本进行升级，请执行多步骤升级。使用您要升级的早期版本的升级说明，升级到符合四版本窗口的最新版本。例如，如果您运行的是 23.07 并希望升级到 25.06：</block>
   <block id="bdb3932167e7866c6c505613dc0f7cb7" category="paragraph">NetApp 不断改进和增强其产品和服务。以下是 Trident 中的一些最新功能。有关早期版本，请参阅早期版本的文档。</block>
+  <block id="23dc68eb3282da7f8baebc1f7c84fff9" category="inline-link">支持生命周期页面</block>
+  <block id="df26dce8cff00211af89034cce0d1904" category="admonition">有关最新 Trident 版本支持计划，请参阅<block ref="605c91b6d04b068d1f5e6199e80f3518" category="inline-link-rx"></block>。</block>
+  <block id="4daca3334f00c4ec7830e587d1e0269d" category="list-text">安装 Trident Protect 需要 Helm 4.x 或更高版本。</block>
+  <block id="43da129a49cd39591bce7ddda6f0dc82" category="list-text">使用 Trident Protect CLI 插件验证目标集群上是否存在 AppVault CR：</block>
+  <block id="ad00af2208d1570d2b6ca4c83cbbb61e" category="admonition">如果目标集群上不存在 AppVault CR，请按照 <block ref="5f86f4618afc0bb72a8693bca73e9890" category="inline-link-macro-rx"></block> 中的步骤创建它。</block>
+  <block id="b104127df6a8992a1e7bad2dbd1aad7c" category="list-text">查看目标集群上可用的 AppVault 的备份内容，并记录<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>要还原的备份：</block>
+  <block id="3f170f167274ed66c26965c774034d2e" category="list-text">使用 AppVault 名称和存档路径将应用程序还原到目标集群：注意：使用 CR 时，请确保目标集群上存在用于应用程序还原的命名空间。</block>
+  <block id="5566fd919e0cd2daefbf9fbd55ec09e3" category="list-text">*spec.appArchivePath*: (_Required_) AppVault 内存储备份内容的路径。使用步骤 2 中的命令查看备份内容并找到<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>要还原的备份。</block>
 </blocks>

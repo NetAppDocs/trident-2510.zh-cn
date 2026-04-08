@@ -297,7 +297,7 @@ tridentctl-protect create backupinplacerestore <my_restore_name> \
 
 
 .步骤
-. 使用 Trident Protect CLI 插件检查目标集群上 AppVault CR 的可用性：
+. 使用 Trident Protect CLI 插件验证目标集群上是否存在 AppVault CR：
 +
 [source, console]
 ----
@@ -305,9 +305,9 @@ tridentctl-protect get appvault --context <destination_cluster_name>
 ----
 +
 
-NOTE: 确保目标集群上存在用于应用程序还原的命名空间。
+NOTE: 如果目标集群上不存在 AppVault CR，请按照 link:trident-protect-appvault-custom-resources.html["使用 Trident Protect AppVault 对象管理存储桶"] 中的步骤创建它。
 
-. 从目标集群查看可用的 AppVault 的备份内容：
+. 查看目标集群上可用的 AppVault 的备份内容，并记录 `appArchivePath`要还原的备份：
 +
 [source, console]
 ----
@@ -332,7 +332,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 | production1 | wordpress | backup | wordpress-bkup-2| 2024-10-30 08:37:40 (UTC)| backuppath2 |
 +-------------+-----------+--------+-----------------+--------------------------+-------------+
 ----
-. 使用 AppVault 名称和存档路径将应用程序还原到目标集群：
+. 使用 AppVault 名称和存档路径将应用程序还原到目标集群：注意：使用 CR 时，请确保目标集群上存在用于应用程序还原的命名空间。
 
 
 [role="tabbed-block"]
@@ -344,16 +344,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 +
 ** *metadata.name*：（_Required_）此自定义资源的名称；为您的环境选择一个唯一且合理的名称。
 ** *spec.appVaultRef*：（_必需_）存储备份内容的 AppVault 的名称。
-** *spec.appArchivePath*：AppVault 中存储备份内容的路径。您可以使用以下命令查找此路径：
-+
-[source, console]
-----
-kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
-----
-+
-
-NOTE: 如果 BackupRestore CR 不可用，您可以使用步骤 2 中提到的命令查看备份内容。
-
+** *spec.appArchivePath*: (_Required_) AppVault 内存储备份内容的路径。使用步骤 2 中的命令查看备份内容并找到 `appArchivePath`要还原的备份。
 ** *spec.namespaceMapping*：还原操作的源命名空间到目标命名空间的映射。使用环境中的信息替换 `my-source-namespace`和 `my-destination-namespace`。
 +
 例如：
