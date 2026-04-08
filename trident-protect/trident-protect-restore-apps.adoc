@@ -332,8 +332,11 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 | production1 | wordpress | backup | wordpress-bkup-2| 2024-10-30 08:37:40 (UTC)| backuppath2 |
 +-------------+-----------+--------+-----------------+--------------------------+-------------+
 ----
-. 使用 AppVault 名称和存档路径将应用程序还原到目标集群：注意：使用 CR 时，请确保目标集群上存在用于应用程序还原的命名空间。
+. 使用 AppVault 名称和存档路径将应用程序还原到目标集群：
 
+
+
+NOTE: 使用 CR 时，请确保目标集群上存在用于应用程序还原的命名空间。
 
 [role="tabbed-block"]
 ====
