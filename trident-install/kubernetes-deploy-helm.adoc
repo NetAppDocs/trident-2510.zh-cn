@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy-helm.html 
+permalink: trident-install/kubernetes-deploy-helm.html 
 keywords: deploy, Trident, operator, helm, helm chart, configuration, values, standard, registry 
 summary: 您可以使用 Helm 部署 Trident 操作员并安装 Trident。此过程适用于 Trident 所需的容器镜像未存储在私有注册表中的安装。 
 ---
@@ -40,10 +40,10 @@ summary: 您可以使用 Helm 部署 Trident 操作员并安装 Trident。此过
 
 使用 Trident link:https://artifacthub.io/packages/helm/netapp-trident/trident-operator["Helm Chart"^] 您可以部署 Trident 操作员并一步安装 Trident。
 
-请检查 link:../trident-get-started/kubernetes-deploy.html["安装概述"] 以确保您已满足安装先决条件，并为您的环境选择了正确的安装选项。
+请检查 link:../trident-install/kubernetes-deploy.html["安装概述"] 以确保您已满足安装先决条件，并为您的环境选择了正确的安装选项。
 
 .开始之前
-除了 link:../trident-get-started/kubernetes-deploy.html#before-you-deploy["部署先决条件"] 之外，您还需要 link:https://v3.helm.sh/["Helm 版本 3"^]。
+除了 link:../trident-install/kubernetes-deploy.html#before-you-deploy["部署先决条件"] 之外，您还需要 link:https://v3.helm.sh/["Helm 版本 3"^]。
 
 .步骤
 . 添加 Trident Helm 存储库：

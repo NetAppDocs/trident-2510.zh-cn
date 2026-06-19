@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-get-started/kubernetes-deploy.html 
+permalink: trident-install/kubernetes-deploy.html 
 keywords: deploy, Trident, methods, operator, tridentctl, helm, tanzu, vmware 
 summary: '您可以使用 Trident 操作员（手动或使用 Helm）或使用 `tridentctl`安装 Trident。本主题为您选择合适的安装流程提供了重要信息。' 
 ---
@@ -40,7 +40,7 @@ summary: '您可以使用 Trident 操作员（手动或使用 Helm）或使用 `
 
 无论安装路径如何，您必须具有：
 
-* 运行受支持的 Kubernetes 版本的受支持的 Kubernetes 集群的完整权限，并启用了功能要求。查看 link:requirements.html["要求"] 了解详情。
+* 运行受支持的 Kubernetes 版本的受支持的 Kubernetes 集群的完整权限，并启用了功能要求。查看 link:../trident-get-started/requirements.html["要求"] 了解详情。
 * 访问受支持的 NetApp 存储系统。
 * 能够从所有 Kubernetes 工作节点挂载卷。
 * 安装并配置了 `kubectl`（或 `oc`，如果您使用的是 OpenShift）来管理您要使用的 Kubernetes 集群的 Linux 主机。
@@ -50,19 +50,19 @@ summary: '您可以使用 Trident 操作员（手动或使用 Helm）或使用 `
 
 
 
-TIP: 如果您还没有熟悉 link:../trident-get-started/intro.html["基本概念"^]，现在是时候了。
+TIP: 如果您还没有熟悉 link:../trident-get-started/intro.html["基本概念"]，现在是时候了。
 
 
 
 == 选择您的安装方法
 
-选择适合您的安装方法。您还应该在做出决定之前查看 link:kubernetes-deploy.html#move-between-installation-methods["在方法之间移动"] 的注意事项。
+选择适合您的安装方法。您还应该在做出决定之前查看 link:kubernetes-deploy.html#moving-between-installation-methods["在方法之间移动"] 的注意事项。
 
 
 
 === 使用 Trident 操作员
 
-无论是手动部署还是使用 Helm，Trident 操作员都是简化安装和动态管理 Trident 资源的好方法。您甚至可以link:../trident-get-started/kubernetes-customize-deploy.html["自定义您的 Trident 操作员部署"]使用 `TridentOrchestrator`自定义资源 (CR) 中的属性。
+无论是手动部署还是使用 Helm，Trident 操作员都是简化安装和动态管理 Trident 资源的好方法。您甚至可以link:../trident-install/kubernetes-customize-deploy.html["自定义您的 Trident 操作员部署"]使用 `TridentOrchestrator`自定义资源 (CR) 中的属性。
 
 使用 Trident 操作员的好处包括：
 

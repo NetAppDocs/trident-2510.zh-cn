@@ -43,7 +43,7 @@ NOTE: 请确保遵循 Amazon Linux 和 Ubuntu https://docs.aws.amazon.com/AWSEC2
 +
 ** 仅使用  `ontap-nas` 驱动程序支持 SMB 卷。
 ** Trident EKS 加载项不支持 SMB 卷。
-** Trident 仅支持将 SMB 卷挂载到在 Windows 节点上运行的 Pod。有关详细信息，请参见 link:../trident-use/trident-fsx-storage-backend.html#prepare-to-provision-smb-volumes["准备配置 SMB 卷"]。
+** Trident 仅支持将 SMB 卷挂载到在 Windows 节点上运行的 Pod。有关详细信息，请参见 link:../trident-use/worker-node-prep.html#prepare-to-provision-smb-volumes["准备配置 SMB 卷"]。
 
 
 * 在 Trident 24.02 之前，在启用了自动备份的 Amazon FSx 文件系统上创建的卷无法被 Trident 删除。要防止 Trident 24.02 或更高版本中的此问题，请在 AWS FSx for ONTAP 的后端配置文件中指定  `fsxFilesystemID`、AWS  `apiRegion`、AWS  `apikey` 和 AWS  `secretKey`。
