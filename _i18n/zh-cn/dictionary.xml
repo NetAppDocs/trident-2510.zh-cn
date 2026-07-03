@@ -309,9 +309,6 @@
   <block id="1a3a2b5e6c52142797bb5c00594e2a3c" category="inline-link-macro">23.04</block>
   <block id="4f00a05b361ef580687832a6a48984db" category="paragraph"><block ref="4f00a05b361ef580687832a6a48984db" category="inline-link-macro-rx"></block></block>
   <block id="fc7d05f9009e90b92a15aad926bca249" category="cell">2026年4月</block>
-  <block id="8dfda84fc7f59655e20a770603bf9231" category="inline-link-macro">23.01</block>
-  <block id="e0ed61e44672f0b6193055dd0719d240" category="paragraph"><block ref="e0ed61e44672f0b6193055dd0719d240" category="inline-link-macro-rx"></block></block>
-  <block id="7022ed6df71cc12fbd0576cef4df23fd" category="cell">2026年1月</block>
   <block id="40e41fb2db11266b8f751c0d5c67cba0" category="inline-link">NetApp 知识库（需要登录）</block>
   <block id="62c93f738b926db77daa59d585fbfa48" category="paragraph">有关疑难解答文章的完整列表，请参阅 <block ref="57f5c759ada931c6a2051314ca6ee99e" category="inline-link-rx"></block>。</block>
   <block id="1cf7168782187634fbc408c66b895dbc" category="section-title">社区支持</block>
@@ -689,7 +686,6 @@
   <block id="aa56a1d260c6089f006323437ab5613f" category="list-text">最小推荐 FlexGroup 成员/卷大小为 100 GiB。</block>
   <block id="90bce6b2a4ca618777f172f6d51e69f1" category="list-text">FlexGroup 卷不支持克隆。</block>
   <block id="971d29a2392e004ddd4263282b307e0c" category="inline-link">NetApp FlexGroup 卷最佳实践和实施指南</block>
-  <block id="8d848c284e4e3a777487dbfd26724083" category="paragraph">有关 FlexGroups 和适用于 FlexGroups 的工作负载的信息，请参见<block ref="fd26d63759e7985cecb8814cdedc189b" category="inline-link-rx"></block>。</block>
   <block id="9e2ebdd267bef148382aa48682e06bc5" category="paragraph">要在同一环境中获得高级功能和大规模扩展，您可以运行 Docker Volume Plugin 的多个实例，一个使用<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>，另一个使用<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>。</block>
   <block id="1534742dd977c66a11d77eb23f10a5ab" category="section-title">Trident 的自定义 ONTAP 角色</block>
   <block id="c1781ac6bfd240f903c26ce4164a5d30" category="paragraph">您可以使用最低权限创建 ONTAP 集群角色，这样您就不必使用 ONTAP 管理员角色在 Trident 中执行操作。在 Trident 后端配置中包含用户名时，Trident 使用您创建的 ONTAP 集群角色来执行操作。</block>
@@ -905,7 +901,6 @@
   <block id="1fdf61a8f946268990d8e15dd9069a6d" category="paragraph"><block ref="eca39b018af81e7b5c8e71b5b4aa3790" category="inline-link-rx"></block> 使存储管理员能够通过保证性能和实现简化和精简的存储占用空间来整合工作负载。结合 API 实现存储管理各个方面的自动化，Element 使存储管理员能够以更少的工作量完成更多工作。</block>
   <block id="25f221cc63a7e1fa55b05c29420a72a2" category="paragraph"><block ref="2841e7defe3939e68d83d007d1ad666b" category="inline-link-rx"></block> 通过自动化日常任务并使基础设施管理员能够专注于更重要的功能，简化了数据中心的管理和规模。</block>
   <block id="be17f8b9c728a6cb61cad5a2609b3888" category="paragraph">NetApp HCI 完全受 Trident 支持。Trident 可以直接针对底层 NetApp HCI 存储平台为容器化应用程序配置和管理存储设备。</block>
-  <block id="29e7ab00082418141d470583a19c28d3" category="paragraph"><block ref="2384314bcd106c8062815b2ed789c4ad" category="inline-link-rx"></block> 是企业级 Azure 文件共享服务，由 NetApp 提供支持。您可以在 Azure 中以本机方式运行要求最苛刻的基于文件的工作负载，并提供您期望从 NetApp 获得的性能和丰富的数据管理。</block>
   <block id="a60c2f57df655a9ac5fcaa0750886195" category="summary">如果您刚刚开始使用 Kubernetes，请按照说明安装 Kubernetes 进行试用。这些说明提供了一个纯净的单节点集群，Trident 可以与之集成以进行演示。</block>
   <block id="8c33c0d65f9f2a648eb30a9703072383" category="doc">Trident 快速入门</block>
   <block id="a555fee6c6587118e36d8dd135df1313" category="inline-link-macro">Trident 要求</block>
@@ -2219,7 +2214,6 @@
   <block id="9ac0dd27d420b7b48ca72e463ae95e18" category="inline-link">这些说明</block>
   <block id="9ac14e26b678482e730c473a2182b3cd" category="list-text">确保安装 Trident Protect 的集群配置了正在运行的快照控制器和相关 CRD。要安装快照控制器，请参阅<block ref="5d66944a2971d1b9b5f332812a6e737b" category="inline-link-rx"></block>。</block>
   <block id="19476662cd814e0aa085eca121de89b8" category="inline-link-macro">VolumeSnapshotClass</block>
-  <block id="09a18f0598e032559af2cd41ba3aa659" category="list-text">确保至少存在一个 VolumeSnapshotClass。有关详细信息，请参见 <block ref="9597869a9c7d53c1c9b0a0dcb905675c" category="inline-link-macro-rx"></block>。</block>
   <block id="d1aeab176ad80dc54e61f7c70cd3ae3b" category="section-title">Trident Protect 存储后端兼容性</block>
   <block id="5599f02aecfd2b4e31e0c79404170afe" category="paragraph">Trident Protect 支持以下存储后端：</block>
   <block id="ca3930511e1c5997e851e891e33190ab" category="list-text">ONTAP 存储阵列</block>
@@ -2777,7 +2771,6 @@
   <block id="0929973a1c9993903f6193add75b3fcf" category="cell">是脚注:2[]</block>
   <block id="3f89ded204a4589d3a6dc04e8b5f3199" category="verse-content-simple">脚注：是脚注：1[]：不由 Trident 管理 是脚注：2[]：支持原始块卷</block>
   <block id="64648abd6d020446c9c8d556a1584d71" category="section-title">Azure NetApp Files 后端驱动程序</block>
-  <block id="e999eb209b6aaa7fd15151716377009a" category="paragraph">Trident 使用 <block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 驱动程序来管理 <block ref="d617d79fbb5ee3bc8bd280353eeb1349" category="inline-link-macro-rx"></block> 服务。</block>
   <block id="67f0b796ae8988fe5446f8f925a4f9d8" category="inline-link-macro">Azure NetApp Files 的 Trident 后端配置</block>
   <block id="46a410b97b05c5034e7d6dd503471548" category="paragraph">有关此驱动程序及其配置方法的详细信息，请参见 <block ref="be39645497306a87b14bbf7b3f50cd06" category="inline-link-macro-rx"></block>。</block>
   <block id="4da613089cbda3d7c19cb4b3f67c1f5d" category="cell">Azure NetApp Files 驱动程序</block>
@@ -3151,7 +3144,6 @@
   <block id="2734923c054f38d8ca66133414af4469" category="paragraph">短时间突发场景中允许的最大 IOPS。</block>
   <block id="e2eb05f1ef7720127ac371ceddc6f433" category="admonition">虽然最大 IOPS 和突发 IOPS 可以设置为高达 200,000，但卷的实际最大性能受到群集使用率和每个节点性能的限制。</block>
   <block id="fa9b1a3006e0ba9ad904c059c0b9add6" category="inline-link">SolidFire 服务质量</block>
-  <block id="acd73d692aa90cacfe480ba8ba39cd5d" category="paragraph">块大小和带宽对 IOPS 数量有直接影响。随着块大小的增加，系统将带宽增加到处理较大块大小所需的级别。随着带宽的增加，系统能够实现的 IOPS 数量会减少。有关 QoS 和性能的更多信息，请参阅<block ref="c8976c50ed9f016849fdce232777cd31" category="inline-link-rx"></block>。</block>
   <block id="b4657825f74ed622384dddf3a1d7d3b7" category="section-title">SolidFire 身份验证</block>
   <block id="9d3b5ff1cde828a63203f0465a34a967" category="paragraph">Element 支持两种身份验证方法：CHAP 和卷访问组 (VAG)。CHAP 使用 CHAP 协议向后端验证主机。卷访问组控制对其设置的卷的访问。NetApp 建议使用 CHAP 进行身份验证，因为它更简单且没有扩展限制。</block>
   <block id="fc9e812321a3f9b0eab1b702a08bab4e" category="admonition">具有增强 CSI 配置程序的 Trident 支持使用 CHAP 身份验证。VAG 只能在传统的非 CSI 操作模式中使用。</block>
@@ -3169,7 +3161,6 @@
   <block id="36588ac65dcdb9b93916fb0ab708edb3" category="list-text"><block ref="36588ac65dcdb9b93916fb0ab708edb3" category="inline-link-rx"></block></block>
   <block id="ca7ab5ec4cba84fbef55956bb38759ce" category="paragraph">*Element 软件*</block>
   <block id="e809d9f88c2933195c4d2ab379c1b5dc" category="inline-link">为 Linux 配置 SolidFire</block>
-  <block id="ce0470e08aa854a8f93fa119434e8422" category="list-text"><block ref="ce0470e08aa854a8f93fa119434e8422" category="inline-link-rx"></block></block>
   <block id="d64280eb12d42bb67976ffba6d268e7b" category="paragraph">*NetApp HCI*</block>
   <block id="3bc72bedcc42d144356d4f933c48485d" category="inline-link">NetApp HCI 部署先决条件</block>
   <block id="85bfffc1a1f7aaabd6cf58841640c308" category="list-text"><block ref="85bfffc1a1f7aaabd6cf58841640c308" category="inline-link-rx"></block></block>
@@ -3181,11 +3172,8 @@
   <block id="17efdd7d210511985714be299d595292" category="inline-link">MySQL 在 SolidFire 上的最佳实践</block>
   <block id="d03b53d8ec563c37e16ee8c900a75b96" category="list-text"><block ref="d03b53d8ec563c37e16ee8c900a75b96" category="inline-link-rx"></block></block>
   <block id="3aefe1a041af945f1fe8673bf775057b" category="inline-link">NetApp SolidFire 和 Cassandra</block>
-  <block id="d7d36869f2f4aa1eb99a10008e153f20" category="list-text"><block ref="d7d36869f2f4aa1eb99a10008e153f20" category="inline-link-rx"></block></block>
   <block id="6e580111d3a8c12cdcd9522a4d3484c6" category="inline-link">Oracle 在 SolidFire 上的最佳实践</block>
-  <block id="f8b52d963f246a75dc6c8b78c954a4fd" category="list-text"><block ref="f8b52d963f246a75dc6c8b78c954a4fd" category="inline-link-rx"></block></block>
   <block id="6448cf37496207be126495e5b05851de" category="inline-link">PostgreSQL 在 SolidFire 上的最佳实践</block>
-  <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
   <block id="b062996d6ca590abe798d3db75561f79" category="paragraph">并非所有应用程序都有特定的指导方针，与您的 NetApp 团队合作并使用<block ref="4caccef7312f2c398bfbb419629c1a78" category="inline-link-rx"></block>查找最新文档非常重要。</block>
   <block id="5ee08ab883e000ce6b739dbb0b6ff376" category="summary">详细了解 Kubernetes 系统的各个部分。</block>
   <block id="607ae6360b32f1bd6e559e915d414fab" category="doc">Kubernetes 概念</block>
@@ -4282,7 +4270,6 @@
   <block id="84444089b52eed627a838de74ae8d652" category="section-title">NFS 和 SMB 卷的先决条件</block>
   <block id="97d64245613ba751b698ce77fd51779a" category="inline-link">Azure：设置 Azure NetApp Files 并创建 NFS 卷</block>
   <block id="d90582d42d65d5af05c3d40ad0eb4987" category="paragraph">如果是首次使用 Azure NetApp Files 或在新位置使用，则需要一些初始配置才能设置 Azure NetApp Files 并创建 NFS 卷。请参阅<block ref="b6e93c3bfc36cf835c63e42e55586d97" category="inline-link-rx"></block>。</block>
-  <block id="07e7004c50a67a3e4e366b4ca1c28e3d" category="paragraph">要配置和使用<block ref="24a785881ff1cdf191a2239811dc9597" category="inline-link-rx"></block>后端，您需要以下内容：</block>
   <block id="4e92a2addd95bd2076226bce70449f6d" category="list-text">在 AKS 集群上使用托管标识时，<block ref="8c443e170595ba0feac007ffb92cb49a" prefix="" category="inline-code"></block>、<block ref="bc54592d6183695b841c6d1880ec0bf8" prefix=" " category="inline-code"></block>、<block ref="93c5bebdea9c94a0740fe6fd9bb250f0" prefix=" " category="inline-code"></block>、<block ref="d5189de027922f81005951e6efe0efd5" prefix=" " category="inline-code"></block> 和 <block ref="2b53761249254ce6b502f521e5cc0683" prefix=" " category="inline-code"></block> 是可选的。</block>
   <block id="5c0a5e9c97099065874a650cf8c67a66" category="list-text"><block ref="bc54592d6183695b841c6d1880ec0bf8" prefix="" category="inline-code"></block>、<block ref="93c5bebdea9c94a0740fe6fd9bb250f0" prefix=" " category="inline-code"></block> 和 <block ref="2b53761249254ce6b502f521e5cc0683" prefix=" " category="inline-code"></block> 在 AKS 集群上使用云标识时是可选的。</block>
   <block id="99c7065ab76131a7b7763287bb5b6735" category="inline-link-macro">Microsoft：为 Azure NetApp Files 创建容量池</block>
@@ -4750,7 +4737,6 @@
   <block id="5224919a4ae5ccf610fb0ee74e4e7a94" category="inline-link">Trident AutoSupport</block>
   <block id="cc368c6d3d859a01a63550429f01cb9c" category="list-text">您可以使用<block ref="86339c2ed773d5bd944b82d3086d3477" prefix=" " category="inline-code"></block>标志指定日志保留时间范围。例如：<block ref="e238339d491d4840f7d8e509bdbb7b63" prefix=" " category="inline-code"></block>。此信息通过与 Trident 一起安装的<block ref="9d80ca17f097c8e365550f4036ccf0e3" prefix=" " category="inline-code"></block>容器收集和发送。您可以在<block ref="1b00454f0ab35dcec2ee1a0061efc6e5" category="inline-link-rx"></block>获取容器镜像。</block>
   <block id="53084cad3d11df800502598c11e2d10b" category="inline-link">最终用户许可协议</block>
-  <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport 不会收集或传输个人身份信息 (PII) 或个人信息。它附带<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block>，不适用于 Trident 容器图像本身。您可以了解有关 NetApp 对数据安全和信任承诺的更多信息<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>。</block>
   <block id="b508f8888445cd57bcf910ed51afb0dd" category="paragraph">Trident 发送的示例负载如下所示：</block>
   <block id="d2ec86f126f845e79aff07e70bf89472" category="list-text">AutoSupport 消息将发送到 NetApp 的 AutoSupport 端点。如果要使用专用注册表存储容器图像，则可以使用 <block ref="53b228c1c8295f49b0c35325e14fcd6a" prefix=" " category="inline-code"></block> 标志。</block>
   <block id="86c5a11fba83815412aec79f67f2d276" category="list-text">您还可以通过生成安装 YAML 文件来配置代理 URL。这可以通过使用<block ref="758aee5ba3aed3d4e9a31a16ea04b47a" prefix=" " category="inline-code"></block>来创建 YAML 文件，并为<block ref="9d80ca17f097c8e365550f4036ccf0e3" prefix=" " category="inline-code"></block>容器在<block ref="eb6cdeddd28243c1552ea3b1061b4410" prefix=" " category="inline-code"></block>中添加<block ref="46f08f4431bbd907a039e14ddf39cf5f" prefix=" " category="inline-code"></block>参数来实现。</block>
@@ -6059,9 +6045,20 @@
   <block id="7ba0dd834b932c7125765a293d38c4f6" category="paragraph">在使用<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>进行升级之前，请先<block ref="ad3ae3ba576f54a9ed86202bbeedc293" category="inline-link-macro-rx"></block>审核。</block>
   <block id="42f5a8a8d0da0554baf08f4dadadd8cc" category="list-text">重新安装 Trident。请参阅 <block ref="64e580b28451084913f93b8afd1bcdce" category="inline-link-macro-rx"></block>。</block>
   <block id="dd5714ad50e5cf2d788e239e1b8c6c6d" category="inline-link-macro">集成自定义节点运行状况检查解决方案</block>
-  <block id="90b138b6a758a26dc3e5e4d1b09e0fa0" category="admonition">您还可以使用其他方法来检测节点故障，如下面的 <block ref="1d8f3a05b03ef442fe310de66a552bf4" category="inline-link-macro-rx"></block> 部分所述。</block>
   <block id="34097d18bbaaadf5ab96f009ad9e612a" category="inline-link">初始配置&lt;block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category='inline-code'/&gt;后更新</block>
   <block id="7011d1effc2f982a1f137b30ee928210" category="cell">协议 LIF 的 IP 地址。*ONTAP NAS 驱动程序*：NetApp 建议指定 dataLIF。如果未提供，Trident 会从 SVM 获取 dataLIF。您可以指定要用于 NFS 挂载操作的完全限定域名 (FQDN)，允许您创建轮询 DNS 以跨多个 dataLIF 进行负载平衡。可以在初始设置后更改。请参阅<block ref="ac2d8c56a59b5d335127676599f45b62" category="inline-link-rx"></block>。*ONTAP SAN 驱动程序*：不要为 iSCSI 指定。Trident 使用 ONTAP Selective LUN Map 来发现建立多路径会话所需的 iSCI LIF。如果明确定义了 dataLIF，则会生成警告。如果 Trident 是使用 IPv6 标志安装的，则可以设置为使用 IPv6 地址。IPv6 地址必须用方括号括起来，例如 [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]。</block>
   <block id="316d0b2e5d414d5d784b53539fdf8a25" category="list-text">Trident 仅支持将 SMB 卷挂载到在 Windows 节点上运行的 Pod。有关详细信息，请参见 <block ref="fc86597dbee216d52b5cd3ebf69f85ac" category="inline-link-macro-rx"></block>。</block>
-  <block id="74a8654521417ab6819a6646f56af88e" category="list-text">使用 Trident 与<block ref="24a785881ff1cdf191a2239811dc9597" category="inline-link-rx"></block>时可能遇到的常见问题是租户和客户端密码来自权限不足的应用程序注册。有关 Trident 要求的完整列表，请参阅<block ref="66af37d4cd76f6bfef0a6d433e8dccd6" category="inline-link-macro-rx"></block>配置。</block>
+  <block id="7244beaf9a5f0b906f65ac443dbf07a0" category="paragraph">有关 FlexGroups 和适用于 FlexGroups 的工作负载的信息，请参见<block ref="02927f5d2a03bd36432bf247f38d70d3" category="inline-link-rx"></block>。</block>
+  <block id="5090b1528d6e6561587ada33bf0caab6" category="paragraph"><block ref="67ffc9d81af4d4784973c007c719056a" category="inline-link-rx"></block> 是企业级 Azure 文件共享服务，由 NetApp 提供支持。您可以在 Azure 中以本机方式运行要求最苛刻的基于文件的工作负载，并提供您期望从 NetApp 获得的性能和丰富的数据管理。</block>
+  <block id="713ed6a629455e87e9e417fdd67b528a" category="list-text">确保至少存在一个 VolumeSnapshotClass。有关详细信息，请参阅 <block ref="0ad6a602adca2b32136ef84f7518b131" category="inline-link-macro-rx"></block>。</block>
+  <block id="a28e9e84da9c7138da0db3bdf59ebdc0" category="admonition">您还可以使用其他方法来检测节点故障，如下面的 <block ref="0131267048eb4344c8fd576fdf93cfe4" category="inline-link-macro-rx"></block> 部分所述。</block>
+  <block id="331e71f1eab1a418f719472f13aa8367" category="paragraph">Trident 使用 <block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 驱动程序来管理 <block ref="72aac22ad2323d491b69751decd3d6b3" category="inline-link-macro-rx"></block> 服务。</block>
+  <block id="6a19e2418aa5a7364cafc452caa81d8b" category="paragraph">块大小和带宽对 IOPS 数量有直接影响。随着块大小的增加，系统将带宽增加到处理较大块大小所需的级别。随着带宽的增加，系统能够实现的 IOPS 数量会减少。有关 QoS 和性能的更多信息，请参阅<block ref="967e30ab6321feb79b1f60d87637a623" category="inline-link-rx"></block>。</block>
+  <block id="afd3e82da8a12df46005660c5b0458ab" category="list-text"><block ref="afd3e82da8a12df46005660c5b0458ab" category="inline-link-rx"></block></block>
+  <block id="3659f55627e86bd71f85eb663d155fdb" category="list-text"><block ref="3659f55627e86bd71f85eb663d155fdb" category="inline-link-rx"></block></block>
+  <block id="948ce0d4338b9761e83a5c41c4e05b77" category="list-text"><block ref="948ce0d4338b9761e83a5c41c4e05b77" category="inline-link-rx"></block></block>
+  <block id="2f40f77c3e54025e1174369f0cadf798" category="list-text"><block ref="2f40f77c3e54025e1174369f0cadf798" category="inline-link-rx"></block></block>
+  <block id="4d7f894e8ec350a861c28ea984648f59" category="paragraph">要配置和使用<block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block>后端，您需要以下内容：</block>
+  <block id="9ea1dc44c501f59786a0dd2c5ebc2d21" category="list-text">Trident AutoSupport 不会收集或传输个人身份信息 (PII) 或个人信息。它附带<block ref="ea14b34590cee15ec565ad8fd8feca2e" category="inline-link-rx"></block>，不适用于 Trident 容器图像本身。您可以了解有关 NetApp 对数据安全和信任承诺的更多信息<block ref="ea3b01bc03342a227ac7c6848f1e44fa" category="inline-link-rx"></block>。</block>
+  <block id="4fbe662a4d7b038cf1f5fecdd31c7c01" category="list-text">使用 Trident 与<block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block>时可能遇到的一个常见问题是，租户和客户端密码来自权限不足的应用程序注册。有关 Trident 要求的完整列表，请参阅<block ref="66af37d4cd76f6bfef0a6d433e8dccd6" category="inline-link-macro-rx"></block>配置。</block>
 </blocks>

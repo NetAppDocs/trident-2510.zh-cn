@@ -296,7 +296,7 @@ NOTE: Docker Swarm 当前不支持该 `ontap-nas-economy`驱动程序，因为 D
 * FlexGroup 卷不支持克隆。
 
 
-有关 FlexGroups 和适用于 FlexGroups 的工作负载的信息，请参见 https://www.netapp.com/pdf.html?item=/media/12385-tr4571pdf.pdf["NetApp FlexGroup 卷最佳实践和实施指南"^]。
+有关 FlexGroups 和适用于 FlexGroups 的工作负载的信息，请参见 https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["NetApp FlexGroup 卷最佳实践和实施指南"^]。
 
 要在同一环境中获得高级功能和大规模扩展，您可以运行 Docker Volume Plugin 的多个实例，一个使用 `ontap-nas`，另一个使用 `ontap-nas-economy`。
 
