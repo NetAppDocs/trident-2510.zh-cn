@@ -5217,7 +5217,6 @@
   <block id="a8fe789c9febc6b76736fb83c90df2b7" category="cell">要为创建的卷分配的自适应 QoS 策略组。为每个存储池或后端选择 qosPolicy 或 adaptiveQosPolicy 中的一个。ontap-nas-economy 不支持此功能。</block>
   <block id="1e8d899088cef4cd1758075ac2b63721" category="cell">为快照"0"保留的卷的百分比</block>
   <block id="d8d01124b8b3fe614b475ad96fca4635" category="cell">如果<block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block> 是<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>，<block ref="2954e92a9b4d0e998fe4893f8141649a" prefix=" " category="inline-code"></block> ""</block>
-  <block id="8336fb38c3b943161d5d6e73af8f4a12" category="cell">启用 LUKS 加密。请参阅 <block ref="3646c7a69a11bdd94c010bf856bda313" category="inline-link-macro-rx"></block>。仅限 SAN。</block>
   <block id="58c09f2c9581bc7c58c32116266b6d8f" category="cell">要使用的分层策略<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block></block>
   <block id="8ba802b52dc84f4e82bfbbf2e2d4a807" category="cell">新卷的模式。*对于 SMB 卷，请留空。*</block>
   <block id="484067c59b1fa950e362a90fd416c89e" category="example-title">SMB 卷存储类的配置</block>
@@ -6029,7 +6028,6 @@
   <block id="14ede6648ba5d3900803ea9064ea6f98" category="paragraph">您可以通过几个步骤安装 Trident 并开始管理存储资源。在开始之前，请查看<block ref="6004af307fc2eed554c42ebaa4be8446" category="inline-link-macro-rx"></block>。</block>
   <block id="365f044223bbae18d908189b4742ff4c" category="paragraph"><block ref="365f044223bbae18d908189b4742ff4c" category="inline-link-macro-rx"></block></block>
   <block id="dde53589c85fa1215e4a3d3c3a0d6508" category="paragraph">请检查 <block ref="90e03a843b5d1f923d0ef6b32fbf11b0" category="inline-link-macro-rx"></block> 以确保您已满足安装先决条件，并为您的环境选择了正确的安装选项。</block>
-  <block id="432cd8287366758f4223f1c5245523ef" category="paragraph">除了 <block ref="cb461850825fa08fd17f7c70933db3ad" category="inline-link-macro-rx"></block> 之外，您还需要 <block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>。</block>
   <block id="e9d36c266026dc04d43783120d0a2d1d" category="paragraph">登录到 Linux 主机并验证其是否正在管理工作和<block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>并且您具有必要的权限。</block>
   <block id="6e0142dfd4a5236fbce5c22e4e30fc2b" category="paragraph">在开始安装之前，请登录到 Linux 主机并验证其是否正在管理工作，<block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>以及您是否具有必要的权限。</block>
   <block id="d88223d773f28ccdf21626fa17114e63" category="admonition">如果安装程序未成功完成或<block ref="ce3abad3e11d6a43c5178e20a0c7d64b" prefix=" " category="inline-code"></block> <block ref="2903817a25b5de1e17a06122d71c5cf9" prefix="(" category="inline-code"></block>在 23.01 之前的版本中）未处于 *Running* 状态，则表示未安装平台。使用<block ref="9b017020b9d48d433ec90c548e6b5c70" prefix=" " category="inline-code"></block>来<block ref="0c26927b9a8e07f011a7bc7653213d74" category="inline-link-macro-rx"></block>并对问题进行故障诊断。</block>
@@ -6061,4 +6059,7 @@
   <block id="4d7f894e8ec350a861c28ea984648f59" category="paragraph">要配置和使用<block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block>后端，您需要以下内容：</block>
   <block id="9ea1dc44c501f59786a0dd2c5ebc2d21" category="list-text">Trident AutoSupport 不会收集或传输个人身份信息 (PII) 或个人信息。它附带<block ref="ea14b34590cee15ec565ad8fd8feca2e" category="inline-link-rx"></block>，不适用于 Trident 容器图像本身。您可以了解有关 NetApp 对数据安全和信任承诺的更多信息<block ref="ea3b01bc03342a227ac7c6848f1e44fa" category="inline-link-rx"></block>。</block>
   <block id="4fbe662a4d7b038cf1f5fecdd31c7c01" category="list-text">使用 Trident 与<block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block>时可能遇到的一个常见问题是，租户和客户端密码来自权限不足的应用程序注册。有关 Trident 要求的完整列表，请参阅<block ref="66af37d4cd76f6bfef0a6d433e8dccd6" category="inline-link-macro-rx"></block>配置。</block>
+  <block id="db7fc8df66e930e05282807a6ebd58f4" category="paragraph">除了 <block ref="1feb3274d112f2cef694d133af384cac" category="inline-link-macro-rx"></block> 之外，您还需要 <block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>。</block>
+  <block id="9502f88fbe245a8b7aaf0d7523fd74d1" category="cell">启用 LUKS 加密。请参阅 <block ref="569f9f91cdcc19909b8acbf6f423daf7" category="inline-link-macro-rx"></block>。仅限 SAN。</block>
+  <block id="2b9bfaa6c460e61c568715fa2f48681d" category="cell">启用 LUKS 加密。请参阅 <block ref="0bc6221bc409edaec0edeaada1b621ce" category="inline-link-macro-rx"></block>。仅限 SAN。</block>
 </blocks>

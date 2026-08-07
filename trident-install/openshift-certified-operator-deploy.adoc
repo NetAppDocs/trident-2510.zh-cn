@@ -19,6 +19,7 @@ summary: 如果使用 Red Hat OpenShift，则可以使用操作员安装 Trident
 
 
 
+[[uninstall-the-netapp-trident-community-operator]]
 == 卸载 NetApp Trident 社区操作员
 
 .步骤
@@ -39,6 +40,7 @@ WARNING: 不要选择 *Delete all operand instances from this operator*。
 
 
 
+[[install-the-openshift-certified-operator]]
 == 安装 OpenShift 认证的 Operator
 
 .步骤
@@ -52,6 +54,7 @@ image::../media/openshift-operator-05.png[安装]
 
 
 
+[[verification]]
 == 验证
 
 * 请检查控制台中的 OperatorHub，以确保已成功安装新的认证操作员。

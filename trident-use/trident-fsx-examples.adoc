@@ -16,6 +16,7 @@ summary: 了解 Amazon FSx for ONTAP 的后端配置选项。本节提供了后�
 
 
 
+[[backend-configuration-options]]
 == 后端配置选项
 
 有关后端配置选项，请参见下表：
@@ -108,6 +109,7 @@ summary: 了解 Amazon FSx for ONTAP 的后端配置选项。本节提供了后�
 |===
 
 
+[[update-datalif-after-initial-configuration]]
 === 初始配置后更新 `dataLIF`
 
 您可以在初始配置后通过运行以下命令更改 dataLIF，以提供具有更新的 dataLIF 的新后端 JSON 文件。
@@ -121,6 +123,7 @@ NOTE: 如果 PVC 连接到一个或多个 pod，则必须关闭所有相应的 p
 
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == 用于配置卷的后端配置选项
 
 您可以使用配置的  `defaults` 部分中的这些选项来控制默认配置。有关示例，请参阅下面的配置示例。
@@ -154,7 +157,7 @@ NOTE: 如果 PVC 连接到一个或多个 pod，则必须关闭所有相应的 p
 | `encryption` | 在新卷上启用 NetApp Volume Encryption (NVE)；默认为 `false`。必须在群集上许可并启用 NVE 才能使用此选项。如果在后端启用了 NAE，则在 Trident 中配置的任何卷都将启用 NAE。有关更多信息，请参阅：link:../trident-reco/security-reco.html["Trident 如何与 NVE 和 NAE 配合使用"]。 | `false` 
 
 
-| `luksEncryption` | 启用 LUKS 加密。请参阅 link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["使用 Linux Unified Key Setup (LUKS)"]。仅限 SAN。 | "" 
+| `luksEncryption` | 启用 LUKS 加密。请参阅 link:../trident-reco/security-luks.html["使用 Linux Unified Key Setup (LUKS)"]。仅限 SAN。 | "" 
 
 
 | `tieringPolicy` | 要使用的分层策略	`none` |  
@@ -167,6 +170,7 @@ NOTE: 如果 PVC 连接到一个或多个 pod，则必须关闭所有相应的 p
 |===
 
 
+[[example-configurations]]
 == 示例配置
 
 .SMB 卷存储类的配置

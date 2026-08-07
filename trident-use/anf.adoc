@@ -16,6 +16,7 @@ summary: '您可以将 Azure NetApp Files 配置为 Trident 的后端。您可�
 
 
 
+[[azure-netapp-files-driver-details]]
 == Azure NetApp Files 驱动程序详细信息
 
 Trident 提供以下 Azure NetApp Files 存储驱动程序以与集群进行通信。支持的访问模式有：_ReadWriteOnce_ (RWO)、_ReadOnlyMany_ (ROX)、_ReadWriteMany_ (RWX)、_ReadWriteOncePod_ (RWOP)。
@@ -37,6 +38,7 @@ RWO、ROX、RWX、RWOP
 |===
 
 
+[[considerations]]
 === 注意事项
 
 * Azure NetApp Files 服务不支持小于 50 GiB 的卷。如果请求较小的卷，Trident 会自动创建 50-GiB 的卷。
@@ -45,6 +47,7 @@ RWO、ROX、RWX、RWOP
 
 
 
+[[managed-identities-for-aks]]
 == AKS 的受管身份
 
 Trident 支持 link:https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["托管标识"^] Azure Kubernetes Services 集群。要利用托管身份提供的简化凭据管理，您必须具备：
@@ -95,6 +98,7 @@ tridentctl install --cloud-provider="Azure" -n trident
 
 
 
+[[cloud-identity-for-aks]]
 == 适用于 AKS 的云标识
 
 云身份使 Kubernetes Pod 能够通过作为工作负载身份进行身份验证而不是提供显式 Azure 凭据来访问 Azure 资源。

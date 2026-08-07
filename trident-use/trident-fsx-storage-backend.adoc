@@ -13,6 +13,7 @@ summary: '使用 Trident 和 Amazon FSx for NetApp ONTAP，您可以确保在 Am
 
 
 
+[[ontap-san-and-nas-driver-integration]]
 == ONTAP SAN 和 NAS 驱动程序集成
 
 要创建存储后端，需要以 JSON 或 YAML 格式创建配置文件。文件需要指定所需的存储类型（NAS 或 SAN）、文件系统和获取该文件的 SVM 以及使用该文件进行身份验证的方式。以下示例演示如何定义基于 NAS 的存储并使用 AWS 密钥将凭据存储到要使用的 SVM：
@@ -100,6 +101,7 @@ backend-tbc-ontap-nas        tbc-ontap-nas        933e0071-66ce-4324-b9ff-f96d91
 
 
 
+[[fsx-for-ontap-driver-details]]
 == FSx for ONTAP 驱动程序详细信息
 
 您可以使用以下驱动程序将 Trident 与 Amazon FSx for NetApp ONTAP 集成：
@@ -132,6 +134,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 ----
 
 
+[[backend-advanced-configuration-and-examples]]
 == 后端高级配置和示例
 
 有关后端配置选项，请参见下表：
@@ -224,6 +227,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 |===
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == 用于配置卷的后端配置选项
 
 您可以使用配置的  `defaults` 部分中的这些选项来控制默认配置。有关示例，请参阅下面的配置示例。
@@ -257,7 +261,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 | `encryption` | 在新卷上启用 NetApp Volume Encryption (NVE)；默认为 `false`。必须在群集上许可并启用 NVE 才能使用此选项。如果在后端启用了 NAE，则在 Trident 中配置的任何卷都将启用 NAE。有关更多信息，请参阅：link:../trident-reco/security-reco.html["Trident 如何与 NVE 和 NAE 配合使用"]。 | `false` 
 
 
-| `luksEncryption` | 启用 LUKS 加密。请参阅 link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["使用 Linux Unified Key Setup (LUKS)"]。仅限 SAN。 | "" 
+| `luksEncryption` | 启用 LUKS 加密。请参阅 link:../trident-reco/security-reco.html["使用 Linux Unified Key Setup (LUKS)"]。仅限 SAN。 | "" 
 
 
 | `tieringPolicy` | 要使用的分层策略	`none` |  
@@ -270,6 +274,7 @@ backend-fsx-ontap-nas   backend-fsx-ontap-nas   7a551921-997c-4c37-a1d1-f2f4c87f
 |===
 
 
+[[provision-smb-volumes]]
 == 配置 SMB 卷
 
 您可以使用 `ontap-nas` 驱动程序配置 SMB 卷。在完成<<ONTAP SAN 和 NAS 驱动程序集成>>之前，请完成以下步骤：link:https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html#prepare-to-provision-smb-volumes["准备配置 SMB 卷"]。
