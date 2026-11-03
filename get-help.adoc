@@ -71,11 +71,6 @@ link:https://docs.netapp.com/us-en/trident-2310/index.html["23.10"^]
  a| 
 link:https://docs.netapp.com/us-en/trident-2307/index.html["23.07"^]
 | -- | -- | 2026年7月 
-
-
- a| 
-link:https://docs.netapp.com/us-en/trident-2304/index.html["23.04"^]
-| -- | -- | 2026年4月 
 |===
 
 NOTE: 有关最新 Trident 版本支持计划，请参阅 https://docs.netapp.com/us-en/trident/get-help.html#trident-support-lifecycle["支持生命周期页面"]。
